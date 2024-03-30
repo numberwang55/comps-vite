@@ -4,19 +4,19 @@ export default function App() {
   return (
     <div>
       <div>
-        <Button primary rounded >hello</Button>
+        <Button primary outline>primary</Button>
       </div>
       <div>
-        <Button>Test</Button>
+        <Button secondary outline>secondary</Button>
       </div>
       <div>
-        <Button>New</Button>
+        <Button success outline>success</Button>
       </div>
       <div>
-        <Button>Something</Button>
+        <Button danger outline>danger</Button>
       </div>
       <div>
-        <Button>Buy</Button>
+        <Button outline warning>warning</Button>
       </div>
     </div>
   );
