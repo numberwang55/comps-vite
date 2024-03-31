@@ -9,6 +9,7 @@ export default function Button({
   danger,
   outline,
   rounded,
+  ...events
 }) {
   const classes = className("px-3 py-1.5 border", {
     "border-blue-400 bg-blue-400 text-white": primary,
@@ -17,22 +18,18 @@ export default function Button({
     "border-yellow-300 bg-yellow-300 text-white": warning,
     "border-red-400 bg-red-500 text-white": danger,
     "rounded-full": rounded,
-    "bg-blue-50": outline,
-    "text-blue-600": outline && primary,
-    "text-gray-800": outline && secondary,
-    "text-green-400": outline && success,
-    "text-yellow-500": outline && warning,
-    "text-red-500": outline && danger
+    "bg-blue-100": outline,
+    "text-blue-500": outline && primary,
+    "text-gray-900": outline && secondary,
+    "text-green-500": outline && success,
+    "text-yellow-600": outline && warning,
+    "text-red-600": outline && danger
   });
-  console.log(classes);
-  return <button className={classes}>{children}</button>;
+  return <button {...events} className={classes}>{children}</button>;
 }
 
 Button.propTypes = {
-  checkVariationValue: ({ primary, secondary, success, warning, danger, outline, rounded }) => {
-    console.log('====================================');
-    console.log(primary, secondary, success, warning, danger, outline, rounded);
-    console.log('====================================');
+  checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
     const count =
       Number(!!primary) +
       Number(!!secondary) +
