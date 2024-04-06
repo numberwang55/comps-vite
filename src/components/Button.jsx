@@ -9,9 +9,9 @@ export default function Button({
   danger,
   outline,
   rounded,
-  ...events
+  ...rest
 }) {
-  const classes = className("px-3 py-1.5 border", {
+  const classes = className(rest.className, "px-3 py-1.5 border", {
     "border-blue-400 bg-blue-400 text-white": primary,
     "border-gray-800 bg-gray-800 text-white": secondary,
     "border-green-400 bg-green-400 text-white": success,
@@ -25,7 +25,7 @@ export default function Button({
     "text-yellow-600": outline && warning,
     "text-red-600": outline && danger
   });
-  return <button {...events} className={classes}>{children}</button>;
+  return <button {...rest} className={classes}>{children}</button>;
 }
 
 Button.propTypes = {
