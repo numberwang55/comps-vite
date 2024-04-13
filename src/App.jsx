@@ -1,16 +1,24 @@
-import ButtonPage from "./pages/ButtonPage";
-import Accordion from "./components/Accordion";
+import { useState } from "react";
+import DropDown from "./components/DropDown";
+import AccordionPage from "./pages/AccordionPage";
 
 export default function App() {
-  const items = [
-    { label: "Puedo utilizar CSS en una app de React?", content: "Claro que si, puedes utilizar este lenguaje de programacion si quieres" },
-    { label: "Puedo utilizar Javascript en una app de React?", content: "Claro que si, puedes utilizar este lenguaje de programacion si quieres" },
-    { label: "Puedo utilizar Typescript en una app de React?", content: "Claro que si, puedes utilizar este lenguaje de programacion si quieres" },
-  ];
+
+  const [selection, setSelection] = useState(null)
+
+  const handleSelect = (option) => {
+    setSelection(option)
+  }
+
+  const options = [
+    {label: "Red", value: "red"},
+    {label: "Green", value: "green"},
+    {label: "Blue", value: "blue"},
+  ]
+  
   return (
-    <div>
-      {/* <ButtonPage /> */}
-      <Accordion items={items}/>
+    <div className="flex">
+      <DropDown options={options} value={selection} onChange={handleSelect}/>
     </div>
-  );
+  )
 }
