@@ -1,4 +1,3 @@
-import ButtonPage from "../pages/ButtonPage";
 import Accordion from "../components/Accordion";
 
 export default function AccordionPage() {
@@ -9,7 +8,6 @@ export default function AccordionPage() {
   ];
   return (
     <div>
-      {/* <ButtonPage /> */}
       <Accordion items={items}/>
     </div>
   );
